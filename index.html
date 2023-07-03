@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---Fonts cdn---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;700;800&display=swap" rel="stylesheet">
+    <!-----font awesome link----->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!---style link--->
+    <link rel="stylesheet" href="style.css">
+    <title>To Do app</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <input type="text" id="new-task-input" placeholder="New task...." aria-label="enter new task">
+            <button id="add-btn">Add</button>
+            <p class="alert" id="alert"></p>
+        </header>
+        <nav>
+            <ul id="types-container">
+                <li class="nav-type" id="all-type" data-type="all">ALL</li>
+                <li class="nav-type" data-type="active">active</li>
+                <li class="nav-type" data-type="completed">completed</li>
+            </ul>
+        </nav>
+        <main>
+            <ul id="tasks-container">
+                <!-- <li><input type="checkbox" aria-label="check">Do Cosf 313 Assignment</li>
+                <li><input type="checkbox" aria-label="check">Do Cosf 313 Assignment</li>
+                <li><input type="checkbox" aria-label="check">Do Cosf 313 Assignment</li>
+                <li><input type="checkbox" aria-label="check">Do Cosf 313 Assignment</li> -->
+            </ul>
+        </main>
+        <button id="push-changes-btn">Push Updates</button>
+        <p class="_link">Developed by:<a target="_blank" href="https://www.linkedin.com/in/emmanuel-mwalugha-b48aaa221/">Tech Mwalugha</a></p>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>

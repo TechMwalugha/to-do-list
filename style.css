@@ -1,0 +1,133 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Mukta', sans-serif;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 100vh;
+    background: linear-gradient(#C9FFBF,#FFAFBD);
+}
+/*-------typography--------*/
+h1 {
+    font-size: 3rem;
+    color: #FF3D00;
+    text-transform: uppercase;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.container, .container header input, input header button {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+header button:hover, header input:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px rgba(243, 4, 4, 0.1);
+    background-color: #FFAFBD;
+}
+header button, nav ul li{
+    text-transform: uppercase;
+}
+.alert{
+    margin-top: .4em;
+    text-align: center;
+    color: red;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+/*----layout-------*/
+.container {
+    background-color: #ffff;
+    padding: .5em;
+    width: 100%;
+    position: relative;
+}
+.container header {
+    margin-bottom: 1.9em;
+    width: 100%;
+}
+header input, header button, #push-changes-btn {
+    padding: .5em 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: inherit;
+    width: 100%;
+}
+
+header button {
+    margin-top: 1em;
+}
+#push-changes-btn {
+    margin-top: 1em;
+    text-transform: uppercase;
+}
+#push-changes-btn:hover {
+    background-color: #C9FFBF;
+}
+nav {
+    margin-bottom: 2em;
+}
+nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav > ul > li {
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 1s all ease;
+}
+.nav-active-item::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #C9FFBF;
+    transition: width 0.3s;
+}
+main ul li:not(:last-child) {
+    margin-bottom: .7em;
+}
+main ul li {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: .5em .4em;
+    border-radius: 5px;
+    color: #444;
+    gap: 10px;
+}
+main ul li i {
+    margin-left: auto;
+    cursor: pointer;
+}
+main ul li i:hover {
+    color: red;
+}
+input[type=checkbox] {
+    transform: scale(1.3);
+}
+._link{
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        width: auto;
+        border-radius: 10px;
+        padding: 1.9375em;
+    }
+}
