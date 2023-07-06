@@ -23,42 +23,7 @@ pushChangesBtn.onclick = () => {
 typesContainer.addEventListener('click', (event) => {
     const type = event.target.dataset.type 
     if(type) {
-        if(type === 'active') {
-            let html = ''
-            data.forEach((data)=>{
-               if(!data.completed) {
-                html += `<li>
-                <input id='${data.id}' ${data.completed ? 'checked' : ''} type="checkbox" aria-label="check" data-action='update'>
-                ${data.content}
-                <i class="fa-solid fa-trash" id='${data.id}' data-action='delete'></i>
-                </li>`
-               } 
-        })
-          if(html === '') {
-            html = 'You have no active tasks'
-          }
-            tasksContainer.innerHTML = html
-        }
-        if(type === 'completed') {
-            let html = ''
-            data.forEach((data)=>{
-               if(data.completed) {
-                html += `<li>
-                <input id='${data.id}' ${data.completed ? 'checked' : ''} type="checkbox" aria-label="check" data-action='update'>
-                ${data.content}
-                <i class="fa-solid fa-trash" id='${data.id}' data-action='delete'></i>
-                </li>`
-               }
-        })
-        if(html === '') {
-            html = 'You have no completed tasks'
-          }
-            tasksContainer.innerHTML = html
-        }
-
-        if(type === 'all') {
-            fetchData()
-        }
+        displayType(type)
     }
 })
 
@@ -83,6 +48,44 @@ tasksContainer.addEventListener('click', (e) => {
         }
     }
 })
+function displayType(type) {
+    if(type === 'active') {
+        let html = ''
+        data.forEach((data)=>{
+           if(!data.completed) {
+            html += `<li>
+            <input id='${data.id}' ${data.completed ? 'checked' : ''} type="checkbox" aria-label="check" data-action='update'>
+            ${data.content}
+            <i class="fa-solid fa-trash" id='${data.id}' data-action='delete'></i>
+            </li>`
+           } 
+    })
+      if(html === '') {
+        html = 'You have no active tasks'
+      }
+        tasksContainer.innerHTML = html
+    }
+    if(type === 'completed') {
+        let html = ''
+        data.forEach((data)=>{
+           if(data.completed) {
+            html += `<li>
+            <input id='${data.id}' ${data.completed ? 'checked' : ''} type="checkbox" aria-label="check" data-action='update'>
+            ${data.content}
+            <i class="fa-solid fa-trash" id='${data.id}' data-action='delete'></i>
+            </li>`
+           }
+    })
+    if(html === '') {
+        html = 'You have no completed tasks'
+      }
+        tasksContainer.innerHTML = html
+    }
+
+    if(type === 'all') {
+        fetchData()
+    }
+}
 
 function removeTask(id) {
     const taskToBeRemoved = data.find((data, index) => {
